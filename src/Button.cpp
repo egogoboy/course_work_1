@@ -1,4 +1,4 @@
-#include "Button.h"
+#include "../include/Button.h"
 
 void Button::drawButton(sf::RenderWindow& app) {
     app.draw(body_);

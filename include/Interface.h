@@ -2,48 +2,48 @@
 #define UserInterface_H
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Keyboard.hpp>
-#include <Button.h>
-#include <Maze.h>
-#include <MazeGeneration.h>
-#include <BackTraking.h>
-#include <MySprite.h>
+#include "Button.h"
+#include "Maze.h"
+#include "MazeGeneration.h"
+#include "BackTraking.h"
+#include "MySprite.h"
 
 class UserInterface : protected BackTraking, protected Maze {
     public:
         UserInterface(Maze& maze): Maze(10) {
 
-            font_.loadFromFile("font/Monocraft.ttf");
+            font_.loadFromFile("../font/Monocraft.ttf");
             scale_ = 1;
             countOfReturns_ = 0;
 
             setlocale(LC_ALL, "Russian");
             isDrawBackTracking_ = false;
 
-            initText(genText_, "новый лабиринт", 716, 74);
-            initText(searchText_, "начать поиск", 1040, 74);
+            initText(genText_, "new maze", 716, 74);
+            initText(searchText_, "start search", 1040, 74);
             initText(incMazeSizeText_, "+", 682, 185);
             initText(decMazeSizeText_, "-", 682, 286);
-            initText(defaultSizeText_, "сбросить размер", 747, 185);
+            initText(defaultSizeText_, "reset size", 747, 185);
             initText(mazeSizeText_, std::to_string(maze.getMazeSize()), 676, 236);
-            initText(changeMazeSizeText_, "размер поля", 764, 236);
-            initText(changeSearchFramerateText_, "скорость поиска", 1058, 236);
+            initText(changeMazeSizeText_, "field size", 764, 236);
+            initText(changeSearchFramerateText_, "search speed", 1058, 236);
             initText(incSearchFramerate_, "+", 994, 185);
             initText(decSearchFramerate_, "-", 994, 286);
-            initText(defaultFramerateText_, "сброс скорости", 1064, 185);
+            initText(defaultFramerateText_, "reset speed", 1064, 185);
             initText(searchFramerateText_, "90%", 982, 236);
-            initText(backTrackingPauseText_, "остановить поиск", 1020, 394);
-            initText(backTrackingDrawNextStepText_, "следующий шаг", 1033, 495);
+            initText(backTrackingPauseText_, "stop search", 1020, 394);
+            initText(backTrackingDrawNextStepText_, "next step", 1033, 495);
             initText(closeProgramText_, "x", 1243, 12);
             closeProgramText_.setCharacterSize(25);
-            initText(headerText_, "поиск выхода из лабиринта методом бэктрэкинга", 65, 20);
+            initText(headerText_, "maze exit search using backtracking", 65, 20);
             initText(userEditPositionText_, "", 667, 595);
-            initText(clearMazeText_, "очистить лабиринт", 701, 395);
-            initText(countOfReturnsText_, "количество возвратов: " + std::to_string(countOfReturns_), 27, 670);
+            initText(clearMazeText_, "clear maze", 701, 395);
+            initText(countOfReturnsText_, "number of returns: " + std::to_string(countOfReturns_), 27, 670);
             initText(isFoundFinish_, "", 400, 670);
             initText(editMazeManualText_,
-                     "старт - зёленый квадрат\nфиниш - оранжевый квадрат\n\nнажмите на старт/финиш для его редактирования,\nследующим нажатием установите новую позицию\n\nредактирование границ:\n  создать - удерживайте ЛКМ и проведите между клетками\n  удалить - удерживайте ПКМ и проведите между клетками", 660, 70);
+                     "start - green square\nfinish - orange square\n\nclick on start/finish to edit it,\nnext click will set a new position\n\nborder editing:\n  create - hold LMB and drag between cells\n  delete - hold RMB and drag between cells", 660, 70);            
+            initText(manualButtonText_, "manual", 749, 495);
 
-            initText(manualButtonText_, "справка", 749, 495);
             generateButton_.setAllOptions(667, 63, 255, 45);
             startSearch_.setAllOptions(979, 63, 255, 45);
             incMazeSizeButton_.setAllOptions(667, 175, 40, 40);
@@ -66,7 +66,7 @@ class UserInterface : protected BackTraking, protected Maze {
             editFinishPosButton_.setPosition(27 + maze.getFinishPosition().first * 60, 63 + maze.getFinishPosition().second * 60);
             editFinishPosButton_.setSize(60 * scale_, 60 * scale_);
 
-            unitSprite_.setTexture("images/unit.png");
+            unitSprite_.setTexture("../images/unit.png");
             drawBackTrackingPause_ = false;
             canDrawNextStep_ = true;
             backTrackingDrawCooldownBoost_ = defaultBackTrackingDrawCooldownBoost_;

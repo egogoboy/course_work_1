@@ -1,7 +1,7 @@
 #ifndef MAZEGENERATION_H
 #define MAZEGENERATION_H
 
-#include <Maze.h>
+#include "Maze.h"
 #include <random>
 #include <chrono>
 #include <SFML/Graphics.hpp>

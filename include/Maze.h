@@ -1,6 +1,6 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include <MySprite.h>
+#include "MySprite.h"
 #ifndef MAZE_H
 #define MAZE_H
 
@@ -10,15 +10,15 @@ class Maze {
         Maze(int mazeSize) : mazeSize_(mazeSize) {
             initMaze();
 
-            vertWallSprite_.setTexture("images/vertical_right_line.png");
-            horWallSprite_.setTexture("images/horizontal_low_line.png");
-            frameSprite_.setTexture("images/frame.png");
+            vertWallSprite_.setTexture("../images/vertical_right_line.png");
+            horWallSprite_.setTexture("../images/horizontal_low_line.png");
+            frameSprite_.setTexture("../images/frame.png");
             frameSprite_.setPosition(20, 56);
-            startSprite_.setTexture("images/start.png");
-            finishSprite_.setTexture("images/finish.png");
-            grayCell_.setTexture("images/gray_track_cell.png");
-            redCell_.setTexture("images/red_track_cell.png");
-            greenCell_.setTexture("images/green_track_cell.png");
+            startSprite_.setTexture("../images/start.png");
+            finishSprite_.setTexture("../images/finish.png");
+            grayCell_.setTexture("../images/gray_track_cell.png");
+            redCell_.setTexture("../images/red_track_cell.png");
+            greenCell_.setTexture("../images/green_track_cell.png");
 
         }
 

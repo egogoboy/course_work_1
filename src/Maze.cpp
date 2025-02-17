@@ -1,10 +1,10 @@
-#include "Maze.h"
+#include "../include/Maze.h"
 
 
 void Maze::printMaze(sf::RenderWindow& app) {
 
     sf::Font font;
-    font.loadFromFile("font/Monocraft.ttf");
+    font.loadFromFile("../font/Monocraft.ttf");
 
     for (int i = 0; i < mazeSize_; i++) {
         for (int j = 0; j < mazeSize_; j++) {

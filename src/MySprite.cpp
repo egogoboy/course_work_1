@@ -1,4 +1,4 @@
-#include "MySprite.h"
+#include "../include/MySprite.h"
 
 void MySprite::setPosition(float x, float y) {
      x_ = x;

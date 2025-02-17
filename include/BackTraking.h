@@ -2,9 +2,9 @@
 #define BACKTRAKING_H
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Keyboard.hpp>
-#include <Maze.h>
-#include <MySprite.h>
-#include <Button.h>
+#include "Maze.h"
+#include "MySprite.h"
+#include "Button.h"
 #include <queue>
 
 class BackTraking {

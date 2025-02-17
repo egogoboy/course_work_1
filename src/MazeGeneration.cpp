@@ -1,4 +1,4 @@
-#include "MazeGeneration.h"
+#include "../include/MazeGeneration.h"
 
 void MazeGeneration::generateMaze(Maze& maze, sf::RenderWindow& app) {
 

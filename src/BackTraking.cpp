@@ -1,4 +1,4 @@
-#include "BackTraking.h"
+#include "../include/BackTraking.h"
 
 void BackTraking::startBackTraking(sf::RenderWindow& app, Maze& maze) {
 

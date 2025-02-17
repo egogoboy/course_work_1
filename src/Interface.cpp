@@ -1,4 +1,4 @@
-#include "Interface.h"
+#include "../include/Interface.h"
 
 void UserInterface::drawUserInterface(sf::RenderWindow& app, Maze& maze) {
 
@@ -61,7 +61,7 @@ void UserInterface::updateUserInterface(sf::RenderWindow& app, Maze& maze) {
             unitSprite_.setPosition(27 + unitXPos_ * scale_ * 60, 63 + unitYPos_ * scale_ * 60);
             isDrawBackTracking_ = true;
             userEditPositionText_.setString("");
-            isFoundFinish_.setString("выход не найден");
+            isFoundFinish_.setString("exit not found");
             isFoundFinish_.setFillColor(sf::Color::Red);
         }
 
@@ -80,7 +80,7 @@ void UserInterface::updateUserInterface(sf::RenderWindow& app, Maze& maze) {
             userEditPositionTextPulseCooldown_ = 200;
             isEditPositionTextVisible_ = true;
             userEditPositionText_.setFillColor(sf::Color(0, 0, 0, 1000 * isEditPositionTextVisible_));
-            userEditPositionText_.setString("вы редактируете старт");
+            userEditPositionText_.setString("you are editing the start");
         }
 
         if (editFinishPosButton_.isPressed(app) && !setFinishPositionCooldown_ && !userChangeStartPosition_) {
@@ -88,7 +88,7 @@ void UserInterface::updateUserInterface(sf::RenderWindow& app, Maze& maze) {
             userEditPositionTextPulseCooldown_ = 200;
             isEditPositionTextVisible_ = true;
             userEditPositionText_.setFillColor(sf::Color(0, 0, 0, 1000 * isEditPositionTextVisible_));
-            userEditPositionText_.setString("вы редактируете финиш");
+            userEditPositionText_.setString("you are editing the finish");
         }
 
         if (clearMazeButton_.isPressed(app)) {
@@ -203,7 +203,7 @@ void UserInterface::processStep(actionType step, Maze& maze) {
         if (step.value == 3) {
             isDrawBackTracking_ = false;
             setCorrectWay(step, maze);
-            isFoundFinish_.setString("выход найден");
+            isFoundFinish_.setString("exit found");
             isFoundFinish_.setFillColor(sf::Color::Green);
         }
 
@@ -297,10 +297,10 @@ void UserInterface::initText(sf::Text& text, std::string s, float xPos, float yP
 
 void UserInterface::updatePauseText() {
     if (drawBackTrackingPause_) {
-        backTrackingPauseText_.setString("продолжить поиск");
+        backTrackingPauseText_.setString("continue search");
      }
      else {
-        backTrackingPauseText_.setString("остановить поиск");
+        backTrackingPauseText_.setString("stop search");
      }
 }
 
@@ -351,8 +351,8 @@ void UserInterface::drawAllText(sf::RenderWindow& app, Maze& maze) {
             app.draw(isFoundFinish_);
 
     if (!isDrawManual_) {
-        manualButtonText_.setString("справка");
-        countOfReturnsText_.setString("количество возвратов: " + std::to_string(countOfReturns_));
+        manualButtonText_.setString("manual");
+        countOfReturnsText_.setString("number of backtracks: " + std::to_string(countOfReturns_));
         app.draw(changeMazeSizeText_);
         app.draw(changeSearchFramerateText_);
         app.draw(mazeSizeText_);
@@ -384,7 +384,7 @@ void UserInterface::drawAllText(sf::RenderWindow& app, Maze& maze) {
 
     }
     else {
-        manualButtonText_.setString("закрыть");
+        manualButtonText_.setString("close");
         app.draw(editMazeManualText_);
     }
 

@@ -1,0 +1,3 @@
+/home/egogoboy/Downloads/Telegram Desktop/course_work_1st_course/build/CMakeFiles/MySFMLProject.dir
+/home/egogoboy/Downloads/Telegram Desktop/course_work_1st_course/build/CMakeFiles/edit_cache.dir
+/home/egogoboy/Downloads/Telegram Desktop/course_work_1st_course/build/CMakeFiles/rebuild_cache.dir
